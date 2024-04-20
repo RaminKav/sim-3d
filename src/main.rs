@@ -1,7 +1,7 @@
 //TODO: sort targets by travel time
 
 use bevy_flycam::prelude::*;
-use std::f32::consts::{FRAC_PI_2, PI};
+use std::f32::consts::FRAC_PI_2;
 
 use bevy::{
     asset::LoadState,
@@ -298,7 +298,7 @@ fn trigger_navmesh_visibility(
     keyboard_input: ResMut<ButtonInput<KeyCode>>,
     current_mesh: Res<CurrentMesh>,
 ) {
-    if keyboard_input.just_pressed(KeyCode::Space) {
+    if keyboard_input.just_pressed(KeyCode::KeyM) {
         for (mut visible, nav) in query.iter_mut() {
             if nav.0 == current_mesh.0 {
                 match *visible {
